@@ -1,0 +1,224 @@
+{
+  "name": "Developer Roadmap Learning System",
+  "version": "1.0.0",
+  "description": "Comprehensive learning system covering 65+ developer roles with 7 specialized agents. Master any tech career path with personalized roadmaps, skill assessments, and expert guidance.",
+  "author": "Developer Roadmap Community",
+  "license": "MIT",
+  "repository": "https://github.com/pluginagentmarketplace/custom-plugin-cloudflare",
+  "keywords": [
+    "learning",
+    "developer",
+    "roadmap",
+    "career",
+    "education",
+    "programming",
+    "guidance",
+    "skill-development",
+    "technology-stacks",
+    "career-paths"
+  ],
+  "agents": [
+    {
+      "id": "core-development-paths",
+      "name": "Core Development Paths Agent",
+      "path": "agents/01-core-development-paths.md",
+      "description": "Expert guide for Frontend, Backend, Full Stack, and DevOps career paths. Specializes in foundational development skills, learning sequences, and portfolio projects."
+    },
+    {
+      "id": "language-framework-specialist",
+      "name": "Language & Framework Specialist Agent",
+      "path": "agents/02-language-framework-specialist.md",
+      "description": "Expert in 9 programming languages and 10+ frameworks. Provides language selection guidance, ecosystem navigation, and framework-specific best practices."
+    },
+    {
+      "id": "mobile-game-developer",
+      "name": "Mobile & Game Developer Agent",
+      "path": "agents/03-mobile-game-developer.md",
+      "description": "Specialist in iOS/Android, cross-platform mobile (React Native, Flutter), and game development (Unity, Unreal Engine). Covers mobile performance and game architecture."
+    },
+    {
+      "id": "data-ai-engineer",
+      "name": "Data & AI Engineer Agent",
+      "path": "agents/04-data-ai-engineer.md",
+      "description": "Expert in data engineering, machine learning, deep learning, generative AI, and MLOps. Covers data pipelines, ML workflows, and production deployment."
+    },
+    {
+      "id": "cloud-infrastructure-expert",
+      "name": "Cloud & Infrastructure Expert Agent",
+      "path": "agents/05-cloud-infrastructure-expert.md",
+      "description": "Specialist in AWS, Cloudflare, GCP, Azure, Kubernetes, Docker, Terraform, and databases. Covers cloud architecture, containerization, and infrastructure automation."
+    },
+    {
+      "id": "architecture-security-specialist",
+      "name": "Architecture & Security Specialist Agent",
+      "path": "agents/06-architecture-security-specialist.md",
+      "description": "Expert in system design, software architecture, API design, cybersecurity, and threat modeling. Specializes in scalable architecture and secure systems."
+    },
+    {
+      "id": "emerging-tech-leadership",
+      "name": "Emerging Tech & Leadership Agent",
+      "path": "agents/07-emerging-tech-leadership.md",
+      "description": "Specialist in prompt engineering, AI agents, red teaming, QA, product management, engineering management, DevRel, technical writing, and UX design."
+    }
+  ],
+  "commands": [
+    {
+      "name": "learn",
+      "description": "Start your personalized learning journey. Get matched with agents and create a custom roadmap based on your goals.",
+      "path": "commands/learn.md"
+    },
+    {
+      "name": "roadmap",
+      "description": "Browse and explore 65+ developer roadmaps covering all major tech careers. Find the roadmap that matches your goals.",
+      "path": "commands/roadmap.md"
+    },
+    {
+      "name": "agents",
+      "description": "Discover and consult with the 7 specialized agents. Get expert guidance on any technology or career topic.",
+      "path": "commands/agents.md"
+    },
+    {
+      "name": "stack",
+      "description": "Build and compare technology stacks for your projects. Get recommendations based on project type and requirements.",
+      "path": "commands/stack.md"
+    },
+    {
+      "name": "assess",
+      "description": "Evaluate your current skills and track progress. Identify knowledge gaps and get personalized improvement plans.",
+      "path": "commands/assess.md"
+    }
+  ],
+  "skills": [
+    {
+      "id": "core-development-paths",
+      "name": "Core Development Paths",
+      "path": "skills/core-paths/SKILL.md",
+      "description": "Comprehensive guide to frontend, backend, full-stack, and DevOps career paths with learning sequences and portfolio projects."
+    },
+    {
+      "id": "language-framework-expertise",
+      "name": "Language & Framework Expertise",
+      "path": "skills/intermediate-paths/SKILL.md",
+      "description": "In-depth knowledge of 9 programming languages and 10+ frameworks with comparison matrices and learning paths."
+    },
+    {
+      "id": "specialized-expertise",
+      "name": "Specialized Technical Expertise",
+      "path": "skills/specialized-paths/SKILL.md",
+      "description": "Advanced knowledge on mobile development, game development, data engineering, cloud infrastructure, architecture, security, and leadership roles."
+    }
+  ],
+  "features": [
+    "7 specialized AI agents for personalized guidance",
+    "65+ developer career roadmaps from developer-roadmap.sh",
+    "Interactive learning path selection",
+    "Technology stack builder and comparisons",
+    "Skill assessment and progress tracking",
+    "3 comprehensive skill modules",
+    "Best practices and industry standards",
+    "Real-world project recommendations",
+    "Career progression frameworks",
+    "Community integration with 2M+ developers"
+  ],
+  "supportedRoles": [
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "DevOps Engineer",
+    "iOS Developer",
+    "Android Developer",
+    "Game Developer",
+    "Data Engineer",
+    "Data Analyst",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Solutions Architect",
+    "Cloud Architect",
+    "Security Engineer",
+    "QA Engineer",
+    "Product Manager",
+    "Engineering Manager",
+    "Developer Relations",
+    "Technical Writer",
+    "UX Designer",
+    "System Designer",
+    "And 45+ more!"
+  ],
+  "learningOutcomes": [
+    "Choose the right career path based on interests and goals",
+    "Master foundational and advanced concepts in any tech field",
+    "Build production-ready projects for portfolio",
+    "Understand technology trade-offs and make informed decisions",
+    "Prepare for technical interviews with targeted practice",
+    "Track progress and identify skill gaps",
+    "Connect with community of 2M+ developers",
+    "Accelerate learning with structured guidance"
+  ],
+  "estimatedHours": "1000+",
+  "difficulty": "Beginner to Advanced",
+  "prerequisites": "Basic programming knowledge recommended but not required",
+  "ratings": {
+    "popularity": 5,
+    "quality": 5,
+    "helpfulness": 5,
+    "updateFrequency": "Regular"
+  },
+  "metadata": {
+    "category": "Learning & Development",
+    "subcategories": [
+      "Career Development",
+      "Technical Education",
+      "Professional Growth",
+      "Skill Assessment",
+      "Technology Guidance"
+    ],
+    "tags": [
+      "learning",
+      "roadmap",
+      "career-path",
+      "developer",
+      "education",
+      "technology",
+      "programming",
+      "professional-development",
+      "skill-building",
+      "guided-learning"
+    ],
+    "languages": ["English"],
+    "targetAudience": [
+      "Career switchers",
+      "Junior developers",
+      "Self-taught programmers",
+      "University graduates",
+      "Career explorers",
+      "Senior developers exploring new fields"
+    ],
+    "useCase": "Comprehensive learning and career guidance system for software developers at any level"
+  },
+  "integrations": {
+    "externalAPIs": [],
+    "tools": [
+      "Claude AI",
+      "Developer Roadmap Community Data",
+      "Open Source Resources"
+    ],
+    "platforms": [
+      "Claude Code",
+      "Web browser",
+      "Local Claude installation"
+    ]
+  },
+  "roadmapData": {
+    "source": "https://github.com/kamranahmedse/developer-roadmap",
+    "rolesCount": 65,
+    "lastUpdated": "2024",
+    "communitySize": "2,000,000+",
+    "githubStars": "224,000+"
+  },
+  "maintenanceInfo": {
+    "status": "Active",
+    "updateCycle": "Quarterly",
+    "supportURL": "https://github.com/pluginagentmarketplace/custom-plugin-cloudflare/issues",
+    "documentationURL": "https://github.com/pluginagentmarketplace/custom-plugin-cloudflare"
+  }
+}
