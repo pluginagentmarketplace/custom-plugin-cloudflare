@@ -1,0 +1,28 @@
+{
+  "hooks": [
+    {
+      "name": "learning-session",
+      "trigger": "command",
+      "triggerValue": "/learn",
+      "actions": [
+        {
+          "type": "track",
+          "metric": "learning_session_started"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "name": "progress-tracking",
+      "trigger": "scheduled",
+      "frequency": "weekly",
+      "actions": [
+        {
+          "type": "analyze",
+          "metric": "learning_progress"
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
