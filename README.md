@@ -1,5 +1,8 @@
 # custom-plugin-cloudflare
 
+[![Run in Smithery](https://smithery.ai/badge/skills/pluginagentmarketplace)](https://smithery.ai/skills?ns=pluginagentmarketplace&utm_source=github&utm_medium=badge)
+
+
 Developer learning system with **65+ career roadmaps** and **7 specialist agents**. Get personalized guidance for any tech career path.
 
 ## 🚀 Quick Start
