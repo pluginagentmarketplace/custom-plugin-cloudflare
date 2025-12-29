@@ -1,0 +1,34 @@
+# Languages Configuration for Cloudflare
+# Version: 1.0.0
+
+primary:
+  typescript:
+    version: "5.x"
+    strict: true
+    target: "ES2022"
+    module: "ESNext"
+  javascript:
+    runtime: "v8-isolates"
+    modules: true
+
+secondary:
+  rust:
+    target: "wasm32-unknown-unknown"
+    optimization: "size"
+    toolchain: "wasm-pack"
+  python:
+    runtime: "pyodide"
+    packages: ["numpy", "pandas"]
+
+templates:
+  worker:
+    language: "typescript"
+    bundler: "esbuild"
+  pages_function:
+    language: "typescript"
+    output: "_worker.js"
+
+linting:
+  eslint: true
+  prettier: true
+  biome: false

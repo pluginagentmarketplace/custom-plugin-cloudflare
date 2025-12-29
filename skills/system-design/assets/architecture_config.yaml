@@ -1,0 +1,44 @@
+# System Design Configuration for Cloudflare
+# Version: 1.0.0
+
+architecture:
+  pattern: "edge-first"
+  regions: "global"
+
+layers:
+  edge:
+    workers: true
+    pages: true
+    r2: true
+
+  compute:
+    durable_objects: true
+    queues: true
+    cron_triggers: true
+
+  storage:
+    kv: true
+    d1: true
+    r2: true
+    vectorize: true
+
+security:
+  waf: true
+  ddos_protection: true
+  zero_trust: true
+  access: true
+
+networking:
+  argo: true
+  load_balancing: true
+  spectrum: false
+
+monitoring:
+  analytics: true
+  logs: true
+  real_user_monitoring: true
+
+scalability:
+  auto_scaling: true
+  global_distribution: true
+  max_concurrent: 1000000

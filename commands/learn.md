@@ -1,3 +1,9 @@
+---
+name: learn
+description: Start Your Learning Journey
+allowed-tools: Read
+---
+
 # /learn - Start Your Learning Journey
 
 Start a personalized learning path based on your goals and experience level.

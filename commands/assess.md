@@ -1,3 +1,9 @@
+---
+name: assess
+description: Evaluate Skills & Track Progress
+allowed-tools: Read
+---
+
 # /assess - Evaluate Skills & Track Progress
 
 Assess your current skills, identify gaps, and track learning progress.

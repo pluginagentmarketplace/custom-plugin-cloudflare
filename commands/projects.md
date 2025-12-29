@@ -1,3 +1,9 @@
+---
+name: projects
+description: Discover Project Ideas
+allowed-tools: Read
+---
+
 # /projects - Discover Project Ideas
 
 Find portfolio projects appropriate for your learning level and career path.

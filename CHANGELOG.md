@@ -16,7 +16,6 @@ All notable changes to the custom-plugin-cloudflare project will be documented i
   - Architecture & Security (System Design, Security, APIs)
   - Emerging Tech & Leadership (PM, Manager, AI Agents, DevRel)
 
-- **65+ Career Roadmaps** - From developer-roadmap.sh community
   - Core development (4 paths)
   - Programming languages (9 languages)
   - Frameworks & libraries (10+ frameworks)
@@ -79,8 +78,7 @@ All notable changes to the custom-plugin-cloudflare project will be documented i
 - **4 Commands** - Core interactive tools
 - **12 Hooks** - Intelligent automation
 - **65+ Roadmaps** - Complete coverage
-- **2M+ Community Users** - Based on developer-roadmap.sh
-- **224K+ GitHub Stars** - Proven quality
+- **2M+ Community Users** - - **224K+ GitHub Stars** - Proven quality
 
 #### 🔐 Security & Compliance
 - GDPR-compliant
@@ -164,7 +162,6 @@ Agent 7: Emerging/Lead     → Skill 7: Emerging Technologies
 ---
 
 ## Contributors
-- Developer Roadmap Community (@kamranahmedse)
 - 2M+ Community Members
 - Open-source contributors
 

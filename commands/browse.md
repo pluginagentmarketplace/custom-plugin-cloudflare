@@ -1,6 +1,11 @@
+---
+name: browse
+description: Explore 65+ Developer Roadmaps
+allowed-tools: Read
+---
+
 # /browse - Explore 65+ Developer Roadmaps
 
-Browse and explore all 65+ developer roadmaps from developer-roadmap.sh community.
 
 ## Usage
 

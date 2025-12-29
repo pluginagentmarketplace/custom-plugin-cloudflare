@@ -1,0 +1,15 @@
+{
+  "name": "pluginagentmarketplace-cloudflare",
+  "owner": {
+    "name": "Plugin Agent Marketplace",
+    "email": "pluginagentmarketplace@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "custom-plugin-cloudflare",
+      "source": "./",
+      "description": "Claude Code plugin for cloudflare development",
+      "version": "1.0.0"
+    }
+  ]
+}

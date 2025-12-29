@@ -1,130 +1,262 @@
-# custom-plugin-cloudflare
+<div align="center">
 
-Developer learning system with **65+ career roadmaps** and **7 specialist agents**. Get personalized guidance for any tech career path.
+<!-- Animated Typing Banner -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=2E9EF7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=Cloudflare+Assistant;7+Agents+%7C+7+Skills;Claude+Code+Plugin" alt="Cloudflare Assistant" />
 
-## 🚀 Quick Start
+<br/>
 
-```bash
-# In Claude Code
-/plugin add marketplace/custom-plugin-cloudflare
-```
+<!-- Badge Row 1: Status Badges -->
+[![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)](https://github.com/pluginagentmarketplace/custom-plugin-cloudflare/releases)
+[![License](https://img.shields.io/badge/License-Custom-yellow?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production-brightgreen?style=for-the-badge)](#)
+[![SASMP](https://img.shields.io/badge/SASMP-v1.3.0-blueviolet?style=for-the-badge)](#)
 
-Or load locally:
-```bash
-/plugin add ./custom-plugin-cloudflare
-```
+<!-- Badge Row 2: Content Badges -->
+[![Agents](https://img.shields.io/badge/Agents-7-orange?style=flat-square&logo=robot)](#-agents)
+[![Skills](https://img.shields.io/badge/Skills-7-purple?style=flat-square&logo=lightning)](#-skills)
+[![Commands](https://img.shields.io/badge/Commands-4-green?style=flat-square&logo=terminal)](#-commands)
 
-## 📚 4 Slash Commands
+<br/>
 
-| Command | Purpose |
-|---------|---------|
-| `/learn` | Start personalized learning journey |
-| `/browse` | Browse 65+ developer roadmaps |
-| `/assess` | Assess skills and track progress |
-| `/projects` | Discover portfolio project ideas |
-
-## 🤖 7 Specialist Agents
-
-1. **Core Development Paths** - Frontend, Backend, Full Stack, DevOps
-2. **Languages & Frameworks** - 9 languages, 10+ frameworks
-3. **Mobile & Games** - iOS, Android, Flutter, Unity, Unreal
-4. **Data & AI** - Data Engineering, ML, AI, MLOps
-5. **Cloud & Infrastructure** - AWS, Kubernetes, Docker, Terraform
-6. **Architecture & Security** - System Design, Security, API Design
-7. **Emerging Tech & Leadership** - PM, Manager, AI Agents, DevRel
-
-## 📊 Coverage
-
-- **65+ Career Paths** - All major tech roles
-- **7 Specialists** - Expert guidance
-- **4 Commands** - Interactive learning
-- **7 Skills** - Comprehensive modules
-- **Timeline** - Beginner to Expert
-
-## 💡 Use Cases
-
-✅ **Career Exploration** - Find your tech path
-✅ **Skill Assessment** - Identify strengths/gaps
-✅ **Learning Guidance** - Personalized roadmaps
-✅ **Project Ideas** - Portfolio building
-✅ **Progress Tracking** - Monitor growth
-✅ **Expert Advice** - Agent consultation
-
-## 🎯 Example Paths
-
-**Frontend Developer:** 3-6 months
-HTML/CSS → JavaScript → React → State Management → Testing
-
-**Backend Developer:** 6-12 months
-Language → Framework → Database → APIs → DevOps
-
-**Full Stack:** 6+ months
-Next.js + PostgreSQL + Vercel
-
-**DevOps Engineer:** 1-2 years
-Linux → Docker → Kubernetes → Cloud → Terraform
-
-## 📈 Features
-
-- Personalized learning paths
-- Skill assessment & progress tracking
-- Project recommendations
-- Technology stack guidance
-- Industry best practices
-- Real-world examples
-
-## 🌟 Tech Stack
-
-- **7 Agents** - Specialist expertise
-- **65+ Roadmaps** - From developer-roadmap.sh
-- **4 Commands** - Interactive CLI
-- **7 Skills** - Learning modules
-- **Professional** - Production-ready
-
-## 📝 How It Works
-
-```
-1. /learn              → Start personalized path
-2. Get matched         → With specialist agent
-3. Follow roadmap      → Step-by-step guidance
-4. Use /assess         → Track progress
-5. Build /projects     → Portfolio projects
-```
-
-## 🔗 Data Source
-
-Built on [developer-roadmap.sh](https://github.com/kamranahmedse/developer-roadmap)
-- **Community:** 2M+ developers
-- **Quality:** 224K+ GitHub stars
-- **Coverage:** 65+ roles
-- **Updates:** Regular
-
-## 🎓 Learning Outcomes
-
-- Choose the right career path
-- Master any tech specialization
-- Build production-ready projects
-- Understand best practices
-- Prepare for job interviews
-- Advance your career
-
-## ✨ Key Features
-
-✓ 65+ developer career paths
-✓ 7 specialized AI agents
-✓ Personalized learning roadmaps
-✓ Skill assessment & tracking
-✓ Technology recommendations
-✓ Portfolio project ideas
-✓ Industry best practices
-✓ Professional guidance
+<!-- Quick CTA Row -->
+[📦 **Install Now**](#-quick-start) · [🤖 **Explore Agents**](#-agents) · [📖 **Documentation**](#-documentation) · [⭐ **Star this repo**](https://github.com/pluginagentmarketplace/custom-plugin-cloudflare)
 
 ---
 
-**Start your learning journey:**
+### What is this?
+
+> **Cloudflare Assistant** is a Claude Code plugin with **7 agents** and **7 skills** for cloudflare development.
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+<details>
+<summary>Click to expand</summary>
+
+- [Quick Start](#-quick-start)
+- [Features](#-features)
+- [Agents](#-agents)
+- [Skills](#-skills)
+- [Commands](#-commands)
+- [Documentation](#-documentation)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+</details>
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Claude Code CLI v2.0.27+
+- Active Claude subscription
+
+### Installation (Choose One)
+
+<details open>
+<summary><strong>Option 1: From Marketplace (Recommended)</strong></summary>
 
 ```bash
-/learn
+# Step 1️⃣ Add the marketplace
+/plugin add marketplace pluginagentmarketplace/custom-plugin-cloudflare
+
+# Step 2️⃣ Install the plugin
+/plugin install custom-plugin-cloudflare@pluginagentmarketplace-cloudflare
+
+# Step 3️⃣ Restart Claude Code
+# Close and reopen your terminal/IDE
 ```
 
-**Questions?** Consult our 7 specialist agents for expert guidance on any tech topic.
+</details>
+
+<details>
+<summary><strong>Option 2: Local Installation</strong></summary>
+
+```bash
+# Clone the repository
+git clone https://github.com/pluginagentmarketplace/custom-plugin-cloudflare.git
+cd custom-plugin-cloudflare
+
+# Load locally
+/plugin load .
+
+# Restart Claude Code
+```
+
+</details>
+
+### ✅ Verify Installation
+
+After restart, you should see these agents:
+
+```
+custom-plugin-cloudflare:03-mobile-games
+custom-plugin-cloudflare:04-data-ai
+custom-plugin-cloudflare:01-core-paths
+custom-plugin-cloudflare:05-cloud-infra
+custom-plugin-cloudflare:06-architecture-security
+... and 2 more
+```
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🤖 **7 Agents** | Specialized AI agents for cloudflare tasks |
+| 🛠️ **7 Skills** | Reusable capabilities with Golden Format |
+| ⌨️ **4 Commands** | Quick slash commands |
+| 🔄 **SASMP v1.3.0** | Full protocol compliance |
+
+---
+
+## 🤖 Agents
+
+### 7 Specialized Agents
+
+| # | Agent | Purpose |
+|---|-------|---------|
+| 1 | **03-mobile-games** | Expert guidance on iOS, Android, cross-platform mobile devel |
+| 2 | **04-data-ai** | Data engineering, machine learning, AI, and MLOps expertise. |
+| 3 | **01-core-paths** | Guide for Frontend, Backend, Full Stack, and DevOps career p |
+| 4 | **05-cloud-infra** | Cloud platforms (AWS, Cloudflare, GCP, Azure), containerizat |
+| 5 | **06-architecture-security** | System design, software architecture, API design, cybersecur |
+| 6 | **02-languages-frameworks** | Expert guidance on 9 programming languages and 10+ framework |
+| 7 | **07-emerging-leadership** | Emerging technologies (prompt engineering, AI agents, red te |
+
+---
+
+## 🛠️ Skills
+
+### Available Skills
+
+| Skill | Description | Invoke |
+|-------|-------------|--------|
+| `mobile-development` | iOS (Swift, SwiftUI), Android (Kotlin, Compose), cross-platf | `Skill("custom-plugin-cloudflare:mobile-development")` |
+| `emerging-tech` | Emerging technologies (prompt engineering, AI agents, red te | `Skill("custom-plugin-cloudflare:emerging-tech")` |
+| `cloud-infrastructure` | Cloud platforms (AWS, Cloudflare, GCP, Azure), containerizat | `Skill("custom-plugin-cloudflare:cloud-infrastructure")` |
+| `languages` | Expert guidance on 9 programming languages (Python, JavaScri | `Skill("custom-plugin-cloudflare:languages")` |
+| `data-engineering` | Data engineering, machine learning, AI, and MLOps. From data | `Skill("custom-plugin-cloudflare:data-engineering")` |
+| `system-design` | System design, software architecture, API design, cybersecur | `Skill("custom-plugin-cloudflare:system-design")` |
+| `core-development` | Master core development paths: Frontend (3-6 mo), Backend (6 | `Skill("custom-plugin-cloudflare:core-development")` |
+
+---
+
+## ⌨️ Commands
+
+| Command | Description |
+|---------|-------------|
+| `/learn` | Start Your Learning Journey |
+| `/assess` | Evaluate Skills & Track Progress |
+| `/projects` | Discover Project Ideas |
+| `/browse` | Explore 65+ Developer Roadmaps |
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
+| [LICENSE](LICENSE) | License information |
+
+---
+
+## 📁 Project Structure
+
+<details>
+<summary>Click to expand</summary>
+
+```
+custom-plugin-cloudflare/
+├── 📁 .claude-plugin/
+│   ├── plugin.json
+│   └── marketplace.json
+├── 📁 agents/              # 7 agents
+├── 📁 skills/              # 7 skills (Golden Format)
+├── 📁 commands/            # 4 commands
+├── 📁 hooks/
+├── 📄 README.md
+├── 📄 CHANGELOG.md
+└── 📄 LICENSE
+```
+
+</details>
+
+---
+
+## 📅 Metadata
+
+| Field | Value |
+|-------|-------|
+| **Version** | 1.0.0 |
+| **Last Updated** | 2025-12-29 |
+| **Status** | Production Ready |
+| **SASMP** | v1.3.0 |
+| **Agents** | 7 |
+| **Skills** | 7 |
+| **Commands** | 4 |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
+
+1. Fork the repository
+2. Create your feature branch
+3. Follow the Golden Format for new skills
+4. Submit a pull request
+
+---
+
+## ⚠️ Security
+
+> **Important:** This repository contains third-party code and dependencies.
+>
+> - ✅ Always review code before using in production
+> - ✅ Check dependencies for known vulnerabilities
+> - ✅ Follow security best practices
+> - ✅ Report security issues privately via [Issues](../../issues)
+
+---
+
+## 📝 License
+
+Copyright © 2025 **Dr. Umit Kacar** & **Muhsin Elcicek**
+
+Custom License - See [LICENSE](LICENSE) for details.
+
+---
+
+## 👥 Contributors
+
+<table>
+<tr>
+<td align="center">
+<strong>Dr. Umit Kacar</strong><br/>
+Senior AI Researcher & Engineer
+</td>
+<td align="center">
+<strong>Muhsin Elcicek</strong><br/>
+Senior Software Architect
+</td>
+</tr>
+</table>
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the Claude Code Community**
+
+[![GitHub](https://img.shields.io/badge/GitHub-pluginagentmarketplace-black?style=for-the-badge&logo=github)](https://github.com/pluginagentmarketplace)
+
+</div>
