@@ -1,0 +1,25 @@
+# Core Development Configuration
+# Frontend, Backend, Full Stack
+# Version: 1.0.0
+
+project:
+  type: "fullstack"
+  frontend: "react"
+  backend: "node"
+
+frontend:
+  framework: "react"
+  build_tool: "vite"
+  styling: "tailwind"
+  state: "zustand"
+
+backend:
+  runtime: "node"
+  framework: "fastify"
+  database: "postgresql"
+  orm: "drizzle"
+
+deployment:
+  frontend: "cloudflare-pages"
+  backend: "cloudflare-workers"
+  database: "d1"

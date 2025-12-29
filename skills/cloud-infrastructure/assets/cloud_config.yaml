@@ -1,0 +1,61 @@
+# Cloud Infrastructure Configuration - Cloudflare Plugin
+# Version: 1.0.0
+
+project:
+  name: "${PROJECT_NAME}"
+  provider: "cloudflare"
+
+# Cloudflare Configuration
+cloudflare:
+  account_id: "${CF_ACCOUNT_ID}"
+  api_token: "${CF_API_TOKEN}"
+
+  zones:
+    - domain: "${DOMAIN}"
+      plan: "pro"
+
+  workers:
+    enabled: true
+    routes:
+      - pattern: "*.${DOMAIN}/*"
+        script: "main-worker"
+
+  pages:
+    enabled: true
+    framework: "next"
+    build_command: "npm run build"
+    output_dir: "out"
+
+  r2:
+    enabled: true
+    buckets:
+      - name: "assets"
+        public: true
+
+  d1:
+    enabled: true
+    databases:
+      - name: "production"
+        location: "weur"
+
+# Multi-Cloud (Optional)
+aws:
+  enabled: false
+  region: "us-east-1"
+
+gcp:
+  enabled: false
+  project_id: ""
+
+# Kubernetes
+kubernetes:
+  enabled: false
+  provider: "eks"
+
+# Terraform
+terraform:
+  backend: "cloudflare"
+  modules:
+    - workers
+    - pages
+    - r2

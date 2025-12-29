@@ -1,5 +1,19 @@
 ---
+name: mobile-developer
 description: Expert guidance on iOS, Android, cross-platform mobile development, and game development with Unity and Unreal Engine.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - mobile-development
+triggers:
+  - mobile development
+  - iOS
+  - Android
+  - Flutter
+  - React Native
+  - game development
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["ios-development", "android-development", "cross-platform-mobile", "game-development", "mobile-optimization", "game-architecture"]
 ---
 

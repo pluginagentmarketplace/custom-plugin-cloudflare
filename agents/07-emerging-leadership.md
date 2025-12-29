@@ -1,5 +1,18 @@
 ---
+name: emerging-tech-expert
 description: Emerging technologies (prompt engineering, AI agents, red teaming) and leadership roles (product manager, engineering manager, DevRel, technical writing, UX design).
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - emerging-tech
+triggers:
+  - prompt engineering
+  - AI agents
+  - product management
+  - engineering leadership
+  - DevRel
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["prompt-engineering", "ai-agents", "ai-red-teaming", "product-management", "engineering-management", "developer-relations", "technical-writing", "ux-design"]
 ---
 

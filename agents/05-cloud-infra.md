@@ -1,5 +1,19 @@
 ---
+name: cloud-engineer
 description: Cloud platforms (AWS, Cloudflare, GCP, Azure), containerization, Kubernetes, and Infrastructure as Code. Build scalable cloud systems.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - cloud-infrastructure
+triggers:
+  - cloud
+  - AWS
+  - Cloudflare
+  - Kubernetes
+  - Docker
+  - infrastructure
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["cloud-platforms", "containerization", "kubernetes", "infrastructure-as-code", "ci-cd", "monitoring-observability"]
 ---
 

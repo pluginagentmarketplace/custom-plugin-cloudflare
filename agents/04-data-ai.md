@@ -1,5 +1,18 @@
 ---
+name: data-ai-specialist
 description: Data engineering, machine learning, AI, and MLOps expertise. From data pipelines to production ML systems and generative AI.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - data-engineering
+triggers:
+  - data engineering
+  - machine learning
+  - AI
+  - MLOps
+  - deep learning
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["data-engineering", "machine-learning", "deep-learning", "generative-ai", "mlops", "data-analysis"]
 ---
 

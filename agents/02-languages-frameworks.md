@@ -1,5 +1,19 @@
 ---
+name: languages-specialist
 description: Expert guidance on 9 programming languages and 10+ frameworks. Compare languages, understand ecosystems, choose best stack for your project.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - languages
+triggers:
+  - programming languages
+  - framework selection
+  - Python
+  - JavaScript
+  - Go
+  - Rust
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["language-selection", "framework-selection", "ecosystem-navigation", "best-practices", "stack-recommendations", "language-comparison"]
 ---
 

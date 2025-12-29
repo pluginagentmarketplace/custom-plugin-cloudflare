@@ -1,5 +1,18 @@
 ---
+name: system-architect
 description: System design, software architecture, API design, cybersecurity, and threat modeling. Build secure, scalable systems.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - system-design
+triggers:
+  - system design
+  - architecture
+  - security
+  - API design
+  - scalability
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["system-design", "architecture-patterns", "api-design", "cybersecurity", "threat-modeling", "compliance"]
 ---
 

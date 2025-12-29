@@ -1,5 +1,17 @@
 ---
+name: core-developer
 description: Guide for Frontend, Backend, Full Stack, and DevOps career paths. Provides learning sequences, technology stacks, and portfolio projects.
+model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Task
+skills:
+  - core-development
+triggers:
+  - frontend
+  - backend
+  - full stack
+  - DevOps
+sasmp_version: "1.3.0"
+eqhm_enabled: true
 capabilities: ["frontend-development", "backend-development", "full-stack-development", "devops-engineering", "career-progression", "project-recommendations"]
 ---
 
