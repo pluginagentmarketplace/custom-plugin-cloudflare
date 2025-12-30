@@ -1,66 +1,124 @@
 ---
+# ═══════════════════════════════════════════════════════════════════════════
+# COMMAND: learn
+# Version: 2.0.0 | Updated: 2025-01
+# ═══════════════════════════════════════════════════════════════════════════
 name: learn
-description: Start Your Learning Journey
-allowed-tools: Read
+description: Start personalized learning journey with AI-guided roadmaps
+allowed-tools: Read, Grep, Glob, Task
+
+# ARGUMENTS
+argument-hint: "[topic] - Optional: specific topic to learn"
+
+# VALIDATION
+validation:
+  topic:
+    type: string
+    pattern: "^[a-zA-Z\\-\\s]+$"
+    required: false
+    max_length: 50
+
+# EXIT CODES
+exit_codes:
+  0: Success - Learning path generated
+  1: Error - Invalid topic specified
+  2: Warning - Topic not found, showing alternatives
 ---
 
 # /learn - Start Your Learning Journey
 
-Start a personalized learning path based on your goals and experience level.
+## Quick Start
 
-## Usage
+```bash
+/learn                    # Interactive path selection
+/learn frontend           # Start frontend path
+/learn python             # Learn Python
+/learn kubernetes         # Learn Kubernetes
+```
+
+## Available Paths
+
+| Path | Command | Duration | Skill Level |
+|------|---------|----------|-------------|
+| **Frontend** | `/learn frontend` | 3-6 mo | Beginner |
+| **Backend** | `/learn backend` | 6-12 mo | Beginner |
+| **Full Stack** | `/learn fullstack` | 9-15 mo | Beginner |
+| **DevOps** | `/learn devops` | 12-24 mo | Intermediate |
+| **Mobile** | `/learn mobile` | 6-12 mo | Beginner |
+| **AI/ML** | `/learn ml` | 12-24 mo | Intermediate |
+| **AI Agents** | `/learn ai-agents` | 4-6 wk | Intermediate |
+| **Cloud** | `/learn aws` | 3-6 mo | Intermediate |
+
+## How It Works
 
 ```
-/learn
+┌─────────────────────────────────────────────────────────────────┐
+│                     /learn WORKFLOW                              │
+├─────────────────────────────────────────────────────────────────┤
+│  1. SELECT PATH                                                  │
+│     └─ Choose from 7 main paths or 65+ specific topics          │
+│                                                                  │
+│  2. PERSONALIZATION                                              │
+│     ├─ Current experience level                                  │
+│     ├─ Time available per week                                   │
+│     └─ Career goals                                              │
+│                                                                  │
+│  3. ROADMAP GENERATION                                           │
+│     ├─ Step-by-step learning sequence                           │
+│     ├─ 2024-2025 recommended resources                          │
+│     ├─ Project ideas for each stage                             │
+│     └─ Timeline to job-readiness                                │
+│                                                                  │
+│  4. AGENT MATCHING                                               │
+│     └─ Connected to specialist agent for ongoing guidance       │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-## What Happens
+## Example Roadmaps
 
-1. **Choose Your Path**
-   - Core Development (Frontend, Backend, Full Stack, DevOps)
-   - Languages & Frameworks (9 languages, 10+ frameworks)
-   - Mobile & Games (iOS, Android, Flutter, Unity, Unreal)
-   - Data & AI (Data Eng, ML, AI, MLOps)
-   - Cloud & Infrastructure (AWS, Kubernetes, Terraform)
-   - Architecture & Security (System Design, Security, API)
-   - Emerging Tech & Leadership (PM, Manager, AI Agents)
+### Frontend (3-6 months)
+```
+HTML/CSS (2-3 wk) → JavaScript (4-6 wk) → React 19 (4-6 wk) → Testing (2-4 wk) → Deploy (1-2 wk)
+```
 
-2. **Answer Questions**
-   - Current experience level
-   - Time available per week
-   - Learning style preference
-   - Career goals
+### Backend (6-12 months)
+```
+Python (4-6 wk) → FastAPI (4-6 wk) → PostgreSQL (3-4 wk) → APIs (3-4 wk) → Deploy (2-4 wk)
+```
 
-3. **Get Roadmap**
-   - Step-by-step learning sequence
-   - Recommended resources
-   - Project ideas
-   - Timeline to job-readiness
+### AI Agents (4-6 weeks)
+```
+LLM Basics (1 wk) → Tool Calling (1 wk) → Agent Loop (2 wk) → Production (ongoing)
+```
 
-4. **Get Matched with Agents**
-   - Relevant specialist agent
-   - Detailed guidance for each step
-   - Answer specific questions
-   - Project feedback
+## Input Validation
 
-## Example Paths
+| Input | Valid | Invalid |
+|-------|-------|---------|
+| `/learn frontend` | ✓ | - |
+| `/learn react-19` | ✓ | - |
+| `/learn kubernetes` | ✓ | - |
+| `/learn @#$%` | - | ✗ Special chars |
+| `/learn` | ✓ (interactive) | - |
 
-**Frontend (3-6 months):**
-HTML/CSS → JavaScript → React → State Management → Testing → Deploy
+## Related Commands
 
-**Backend (6-12 months):**
-Language → Framework → Database → APIs → Testing → DevOps → Production
+| Command | Description |
+|---------|-------------|
+| `/assess` | Evaluate current skills first |
+| `/projects` | Find projects for your level |
+| `/browse` | Explore all 65+ roadmaps |
 
-**DevOps (1-2 years):**
-Linux → Docker → Kubernetes → Terraform → Cloud → CI/CD
+## Troubleshooting
 
-**ML Engineer (1-2 years):**
-Python → Math → Algorithms → Deep Learning → MLOps → Production
+```
+Path not found?
+├─► Check spelling
+├─► Try broader term (e.g., "frontend" not "react-components")
+└─► Use `/browse` to see all available paths
 
-## Next Steps
-
-1. Run `/learn` to start
-2. Answer personalization questions
-3. Get custom roadmap
-4. Follow step-by-step
-5. Use `/assess` to track progress
+Not sure where to start?
+├─► Run `/assess` to find your level
+├─► Start with core path (frontend, backend, etc.)
+└─► Don't overthink - pick one and start today
+```

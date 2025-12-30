@@ -1,10 +1,11 @@
 {
   "name": "custom-plugin-cloudflare",
   "displayName": "Developer Roadmap Learning System",
-  "version": "1.0.0",
-  "releaseDate": "2024-11-18",
-  "description": "Enterprise-grade learning system with 65+ career roadmaps and 7 specialist AI agents. Get personalized guidance from foundation to mastery for any tech career path. Production-ready, zero-gap coverage.",
-  "longDescription": "Comprehensive professional development platform combining 65+ developer career roadmaps from the renowned developer-roadmap.sh community (2M+ users) with 7 specialized AI agents. Each agent provides expert guidance, practical workflows, proven best practices, and real-world examples. Features intelligent skill assessment, personalized learning paths, portfolio project recommendations, and production-grade tools. Perfect for career switchers, junior developers, students, and senior developers exploring new domains.",
+  "version": "2.0.0",
+  "releaseDate": "2025-01-30",
+  "sasmp_version": "1.3.0",
+  "description": "Production-grade learning system with 65+ career roadmaps, 7 specialist AI agents, type-safe I/O contracts, comprehensive troubleshooting, and 2024-2025 industry best practices.",
+  "longDescription": "Enterprise-grade professional development platform combining 65+ developer career roadmaps with 7 specialized AI agents. Features include: type-safe input/output schemas, error handling with fallback strategies, retry logic with exponential backoff, comprehensive troubleshooting decision trees, and OWASP-compliant security guidance. Built on Anthropic 2025 agentic patterns (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer). Perfect for career switchers, developers, and teams seeking production-ready learning paths.",
   "author": "Developer Roadmap Community",
   "authorEmail": "support@roadmap.sh",
   "license": "SEE LICENSE IN LICENSE",
@@ -20,103 +21,86 @@
     "roadmap",
     "career",
     "education",
-    "guidance",
-    "skill-development",
-    "career-paths",
-    "programming",
-    "professional-development",
     "ai-agents",
-    "mentoring",
-    "training"
+    "production-grade",
+    "type-safe",
+    "troubleshooting",
+    "2025-best-practices",
+    "anthropic-patterns",
+    "sasmp-1.3.0"
   ],
   "engines": {
     "claudeCode": ">=1.0.0"
   },
   "agents": [
     {
-      "id": "core-paths",
-      "name": "Core Development Paths",
+      "id": "core-developer",
+      "name": "Core Development Paths Expert",
       "path": "agents/01-core-paths.md",
-      "description": "Expert guidance for Frontend, Backend, Full Stack, and DevOps career paths with learning sequences, technology stacks, portfolio projects, and career progression frameworks.",
+      "description": "Expert guide for Frontend, Backend, Full Stack, and DevOps career paths. Provides learning sequences, technology stacks, portfolio projects, and career progression frameworks.",
       "shortDesc": "Frontend, Backend, Full Stack, DevOps guidance",
-      "expertise": [
+      "skills": ["core-development"],
+      "capabilities": [
         "frontend-development",
         "backend-development",
         "full-stack-development",
         "devops-engineering",
-        "career-progression"
+        "career-progression",
+        "project-recommendations",
+        "stack-selection"
       ],
-      "languages": [
-        "HTML/CSS",
-        "JavaScript/TypeScript",
-        "Python",
-        "Java",
-        "Go"
-      ],
-      "frameworks": [
-        "React",
-        "Vue",
-        "Angular",
-        "Express",
-        "FastAPI",
-        "Spring Boot"
-      ],
-      "targetAudience": [
-        "career-switchers",
-        "junior-developers",
-        "students"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "goal": { "type": "string", "enum": ["frontend", "backend", "fullstack", "devops"] },
+          "experience_level": { "type": "string", "enum": ["beginner", "intermediate", "advanced"] }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "languages-specialist",
+        "max_retries": 3,
+        "timeout_seconds": 30
+      },
       "estimatedLearningHours": 500,
       "difficulty": "beginner-to-intermediate"
     },
     {
-      "id": "languages-frameworks",
-      "name": "Languages & Frameworks",
+      "id": "languages-specialist",
+      "name": "Languages & Frameworks Specialist",
       "path": "agents/02-languages-frameworks.md",
-      "description": "Deep expertise on 9 programming languages (Python, JavaScript, TypeScript, Java, Go, Rust, PHP, C++, Kotlin) and 10+ frameworks. Compare languages, select stacks, master ecosystem-specific patterns.",
+      "description": "Expert guidance on 9 programming languages and 10+ frameworks. Compare languages, understand ecosystems, choose optimal stacks.",
       "shortDesc": "9 languages, 10+ frameworks, ecosystem mastery",
-      "expertise": [
+      "skills": ["languages"],
+      "capabilities": [
         "language-selection",
         "framework-selection",
         "ecosystem-navigation",
-        "technology-stacks",
         "best-practices",
-        "performance-optimization"
+        "stack-recommendations",
+        "language-comparison"
       ],
-      "languages": [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "Java",
-        "Go",
-        "Rust",
-        "PHP",
-        "C++",
-        "Kotlin"
-      ],
-      "frameworks": [
-        "React",
-        "Next.js",
-        "Angular",
-        "Vue",
-        "Node.js",
-        "Spring Boot",
-        "ASP.NET Core",
-        "FastAPI",
-        "Django",
-        "Flask"
-      ],
-      "coverageCount": 19,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "use_case": { "type": "string" },
+          "constraints": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "core-developer",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 400,
       "difficulty": "intermediate"
     },
     {
-      "id": "mobile-games",
-      "name": "Mobile & Games",
+      "id": "mobile-developer",
+      "name": "Mobile & Games Specialist",
       "path": "agents/03-mobile-games.md",
-      "description": "Specialist in iOS (Swift, SwiftUI), Android (Kotlin, Jetpack Compose), cross-platform (Flutter, React Native), and game development (Unity, Unreal). Master platform-specific optimization and architecture.",
+      "description": "Expert guidance on iOS, Android, cross-platform mobile development, and game development with Unity and Unreal Engine.",
       "shortDesc": "iOS, Android, Flutter, Unity, Unreal expertise",
-      "expertise": [
+      "skills": ["mobile-development"],
+      "capabilities": [
         "ios-development",
         "android-development",
         "cross-platform-mobile",
@@ -124,100 +108,87 @@
         "mobile-optimization",
         "game-architecture"
       ],
-      "platforms": [
-        "iOS",
-        "Android",
-        "Flutter",
-        "React Native",
-        "Unity",
-        "Unreal Engine"
-      ],
-      "languages": [
-        "Swift",
-        "Kotlin",
-        "Dart",
-        "C#",
-        "C++"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string", "enum": ["ios", "android", "cross-platform", "games"] }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "core-developer",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 450,
       "difficulty": "intermediate-to-advanced"
     },
     {
-      "id": "data-ai",
-      "name": "Data & AI",
+      "id": "data-ai-specialist",
+      "name": "Data & AI Specialist",
       "path": "agents/04-data-ai.md",
-      "description": "Expert in data engineering, machine learning, deep learning, generative AI, and MLOps. From data pipelines to production ML systems, AI agents, and LLM applications.",
+      "description": "Data engineering, machine learning, AI, and MLOps expertise. From data pipelines to production ML systems and generative AI.",
       "shortDesc": "Data Engineering, ML, AI, MLOps, LLMs",
-      "expertise": [
+      "skills": ["data-engineering"],
+      "capabilities": [
         "data-engineering",
         "machine-learning",
         "deep-learning",
         "generative-ai",
         "mlops",
-        "ai-agents",
-        "prompt-engineering"
+        "data-analysis",
+        "llm-applications",
+        "rag-systems"
       ],
-      "technologies": [
-        "TensorFlow",
-        "PyTorch",
-        "Apache Spark",
-        "Apache Airflow",
-        "scikit-learn",
-        "LangChain",
-        "OpenAI",
-        "Anthropic"
-      ],
-      "tools": [
-        "Jupyter",
-        "MLflow",
-        "Kubeflow",
-        "Weights & Biases",
-        "dbt",
-        "Prefect"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "role": { "type": "string", "enum": ["data-engineer", "ml-engineer", "ai-engineer"] }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "core-developer",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 600,
       "difficulty": "intermediate-to-advanced"
     },
     {
-      "id": "cloud-infra",
-      "name": "Cloud & Infrastructure",
+      "id": "cloud-engineer",
+      "name": "Cloud & Infrastructure Expert",
       "path": "agents/05-cloud-infra.md",
-      "description": "Expert in AWS, GCP, Azure, Cloudflare, Docker, Kubernetes, Infrastructure as Code (Terraform), and CI/CD. Build scalable, secure cloud systems and automate infrastructure.",
+      "description": "Cloud platforms (AWS, Cloudflare, GCP, Azure), containerization, Kubernetes, and Infrastructure as Code. Build scalable cloud systems.",
       "shortDesc": "AWS, Kubernetes, Docker, Terraform, DevOps",
-      "expertise": [
+      "skills": ["cloud-infrastructure"],
+      "capabilities": [
         "cloud-platforms",
         "containerization",
-        "orchestration",
+        "kubernetes",
         "infrastructure-as-code",
         "ci-cd",
         "monitoring-observability",
         "cost-optimization"
       ],
-      "cloudPlatforms": [
-        "AWS",
-        "GCP",
-        "Azure",
-        "Cloudflare"
-      ],
-      "tools": [
-        "Docker",
-        "Kubernetes",
-        "Terraform",
-        "Helm",
-        "GitHub Actions",
-        "Jenkins",
-        "GitLab CI"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string", "enum": ["aws", "gcp", "azure", "cloudflare", "multi-cloud"] },
+          "scale": { "type": "string", "enum": ["startup", "growth", "enterprise"] }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "system-architect",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 500,
       "difficulty": "advanced"
     },
     {
-      "id": "architecture-security",
-      "name": "Architecture & Security",
+      "id": "system-architect",
+      "name": "Architecture & Security Expert",
       "path": "agents/06-architecture-security.md",
-      "description": "Expert in system design, software architecture, API design, cybersecurity, threat modeling, and compliance. Build secure, scalable systems that pass production scrutiny.",
+      "description": "System design, software architecture, API design, cybersecurity, and threat modeling. Build secure, scalable systems.",
       "shortDesc": "System Design, Security, APIs, Compliance",
-      "expertise": [
+      "skills": ["system-design"],
+      "capabilities": [
         "system-design",
         "architecture-patterns",
         "api-design",
@@ -226,30 +197,29 @@
         "compliance",
         "disaster-recovery"
       ],
-      "specializations": [
-        "OWASP Top 10",
-        "GDPR",
-        "HIPAA",
-        "SOC 2",
-        "PCI-DSS"
-      ],
-      "patterns": [
-        "Microservices",
-        "Serverless",
-        "Event-Driven",
-        "CQRS",
-        "Event Sourcing"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "system_type": { "type": "string" },
+          "scale": { "type": "string", "enum": ["startup", "growth", "enterprise"] },
+          "security_requirements": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "cloud-engineer",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 400,
       "difficulty": "advanced"
     },
     {
-      "id": "emerging-leadership",
-      "name": "Emerging Tech & Leadership",
+      "id": "emerging-tech-expert",
+      "name": "Emerging Tech & Leadership Expert",
       "path": "agents/07-emerging-leadership.md",
-      "description": "Specialist in emerging technologies (prompt engineering, AI agents, AI red teaming) and leadership roles (product manager, engineering manager, DevRel, technical writing, UX design, design systems).",
+      "description": "Emerging technologies (prompt engineering, AI agents, red teaming) and leadership roles (product manager, engineering manager, DevRel, technical writing).",
       "shortDesc": "Prompt Engineering, AI Agents, Leadership, DevRel",
-      "expertise": [
+      "skills": ["emerging-tech"],
+      "capabilities": [
         "prompt-engineering",
         "ai-agents",
         "ai-red-teaming",
@@ -259,20 +229,17 @@
         "technical-writing",
         "ux-design"
       ],
-      "emergingTechs": [
-        "LLMs",
-        "Prompt Engineering",
-        "AI Agents",
-        "Red Teaming",
-        "Generative AI"
-      ],
-      "leadershipRoles": [
-        "Product Manager",
-        "Engineering Manager",
-        "Tech Lead",
-        "Architect",
-        "DevRel Engineer"
-      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "focus": { "type": "string", "enum": ["emerging-tech", "leadership"] },
+          "specific_area": { "type": "string" }
+        }
+      },
+      "error_handling": {
+        "fallback_agent": "data-ai-specialist",
+        "max_retries": 3
+      },
       "estimatedLearningHours": 300,
       "difficulty": "intermediate-to-advanced"
     }
@@ -280,56 +247,47 @@
   "commands": [
     {
       "name": "learn",
-      "description": "Start your personalized learning journey. Get matched with specialist agents and receive custom roadmap based on your goals.",
+      "description": "Start personalized learning journey with AI-guided roadmaps",
       "path": "commands/learn.md",
-      "aliases": [
-        "start",
-        "begin",
-        "path",
-        "guide"
-      ],
-      "frequency": "entry-point",
-      "complexity": "interactive"
+      "argument_hint": "[topic] - Optional: specific topic to learn",
+      "aliases": ["start", "begin", "path", "guide"],
+      "validation": {
+        "topic": { "type": "string", "pattern": "^[a-zA-Z\\-\\s]+$", "required": false }
+      },
+      "exit_codes": { "0": "Success", "1": "Error", "2": "Warning" }
     },
     {
       "name": "browse",
-      "description": "Browse and explore all 65+ developer roadmaps from developer-roadmap.sh. Find your role and understand learning requirements.",
+      "description": "Explore 65+ developer roadmaps across all technology domains",
       "path": "commands/browse.md",
-      "aliases": [
-        "explore",
-        "search",
-        "find",
-        "discover"
-      ],
-      "frequency": "exploration",
-      "complexity": "browsable"
+      "argument_hint": "[category|role] - Optional: filter by category or role",
+      "aliases": ["explore", "search", "find", "discover"],
+      "validation": {
+        "filter": { "type": "string", "pattern": "^[a-zA-Z\\-\\s]+$", "required": false }
+      },
+      "exit_codes": { "0": "Success", "1": "Error", "2": "Warning" }
     },
     {
       "name": "assess",
-      "description": "Assess your current skills across any domain. Identify knowledge gaps and get detailed improvement recommendations.",
+      "description": "Evaluate skills, identify gaps, and track learning progress",
       "path": "commands/assess.md",
-      "aliases": [
-        "test",
-        "evaluate",
-        "check",
-        "progress",
-        "score"
-      ],
-      "frequency": "periodic",
-      "complexity": "analytical"
+      "argument_hint": "[topic|progress] - Optional: specific skill or 'progress'",
+      "aliases": ["test", "evaluate", "check", "progress", "score"],
+      "validation": {
+        "topic": { "type": "string", "pattern": "^[a-zA-Z\\-\\s]+$", "required": false }
+      },
+      "exit_codes": { "0": "Success", "1": "Error", "2": "Warning" }
     },
     {
       "name": "projects",
-      "description": "Discover portfolio project ideas appropriate for your learning level. Build real-world projects to demonstrate mastery.",
+      "description": "Discover portfolio projects appropriate for your skill level and career path",
       "path": "commands/projects.md",
-      "aliases": [
-        "build",
-        "idea",
-        "portfolio",
-        "practice"
-      ],
-      "frequency": "learning",
-      "complexity": "practical"
+      "argument_hint": "[level|category] - Optional: beginner/intermediate/advanced or category",
+      "aliases": ["build", "idea", "portfolio", "practice"],
+      "validation": {
+        "filter": { "type": "string", "enum": ["beginner", "intermediate", "advanced"], "required": false }
+      },
+      "exit_codes": { "0": "Success", "1": "Error", "2": "Warning" }
     }
   ],
   "skills": [
@@ -337,156 +295,93 @@
       "id": "core-development",
       "name": "Core Development",
       "path": "skills/core-development/SKILL.md",
-      "description": "Master core development paths: Frontend, Backend, Full Stack, DevOps. Comprehensive learning sequences and production-ready tech stacks.",
-      "triggers": [
-        "frontend",
-        "backend",
-        "full-stack",
-        "devops",
-        "development",
-        "web"
-      ],
-      "level": "intermediate",
-      "prerequisites": [
-        "programming-basics",
-        "git-basics"
-      ]
+      "description": "Master core development paths - Frontend, Backend, Full Stack, DevOps. Atomic skill for learning sequences and technology stack recommendations.",
+      "triggers": ["frontend", "backend", "full-stack", "fullstack", "devops", "web development"],
+      "parameters": {
+        "path": { "type": "string", "enum": ["frontend", "backend", "fullstack", "devops"], "required": true },
+        "level": { "type": "string", "enum": ["beginner", "intermediate", "advanced"], "default": "beginner" }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "intermediate"
     },
     {
       "id": "languages",
       "name": "Languages & Frameworks",
       "path": "skills/languages/SKILL.md",
-      "description": "Deep expertise on 9 languages and 10+ frameworks. Compare, select, and master programming languages and their ecosystems.",
-      "triggers": [
-        "python",
-        "javascript",
-        "java",
-        "language",
-        "framework",
-        "typescript",
-        "go",
-        "rust"
-      ],
-      "level": "intermediate-to-advanced",
-      "prerequisites": [
-        "programming-basics"
-      ]
+      "description": "Expert guidance on 9 programming languages and 10+ frameworks. Compare, select, and master language ecosystems.",
+      "triggers": ["python", "javascript", "typescript", "java", "go", "rust", "language comparison", "framework selection"],
+      "parameters": {
+        "use_case": { "type": "string", "required": true },
+        "constraints": { "type": "array", "required": false }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "intermediate-to-advanced"
     },
     {
       "id": "mobile-development",
       "name": "Mobile Development",
       "path": "skills/mobile-development/SKILL.md",
-      "description": "iOS, Android, Flutter, React Native, and game development with Unity and Unreal. Native and cross-platform mobile expertise.",
-      "triggers": [
-        "ios",
-        "android",
-        "flutter",
-        "mobile",
-        "swift",
-        "kotlin",
-        "game",
-        "unity"
-      ],
-      "level": "advanced",
-      "prerequisites": [
-        "core-development"
-      ]
+      "description": "iOS (Swift, SwiftUI), Android (Kotlin, Compose), cross-platform (Flutter, React Native), and game development (Unity, Unreal).",
+      "triggers": ["ios", "android", "flutter", "react native", "mobile", "swift", "kotlin", "unity", "game development"],
+      "parameters": {
+        "platform": { "type": "string", "enum": ["ios", "android", "cross-platform", "games"], "required": true }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "advanced"
     },
     {
       "id": "data-engineering",
       "name": "Data Engineering",
       "path": "skills/data-engineering/SKILL.md",
-      "description": "Data pipelines, ML models, AI systems, and MLOps. From data collection to production deployment with best practices.",
-      "triggers": [
-        "data",
-        "machine-learning",
-        "ml",
-        "ai",
-        "mlops",
-        "spark",
-        "airflow",
-        "lora"
-      ],
-      "level": "advanced",
-      "prerequisites": [
-        "programming-basics",
-        "python-advanced"
-      ]
+      "description": "Data engineering, machine learning, AI, and MLOps. From data pipelines to production ML systems and LLM applications.",
+      "triggers": ["data engineering", "machine learning", "ml", "ai", "mlops", "spark", "airflow", "llm", "rag", "langchain"],
+      "parameters": {
+        "role": { "type": "string", "enum": ["data-engineer", "ml-engineer", "ai-engineer"], "required": true }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "advanced"
     },
     {
       "id": "cloud-infrastructure",
       "name": "Cloud Infrastructure",
       "path": "skills/cloud-infrastructure/SKILL.md",
-      "description": "AWS, Kubernetes, Docker, Terraform, and CI/CD pipelines. Build, deploy, and manage cloud-native systems.",
-      "triggers": [
-        "aws",
-        "kubernetes",
-        "docker",
-        "cloud",
-        "terraform",
-        "devops",
-        "ci-cd"
-      ],
-      "level": "advanced",
-      "prerequisites": [
-        "linux-basics",
-        "networking-basics"
-      ]
+      "description": "Cloud platforms (AWS, Cloudflare, GCP, Azure), containerization (Docker), Kubernetes, Infrastructure as Code (Terraform), CI/CD, and observability.",
+      "triggers": ["aws", "kubernetes", "docker", "cloud", "terraform", "devops", "ci-cd", "cloudflare", "gcp", "azure"],
+      "parameters": {
+        "platform": { "type": "string", "enum": ["aws", "gcp", "azure", "cloudflare", "multi-cloud"], "required": true }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "advanced"
     },
     {
       "id": "system-design",
       "name": "System Design",
       "path": "skills/system-design/SKILL.md",
-      "description": "System design, architecture, API design, security, and compliance. Design production-ready, secure, scalable systems.",
-      "triggers": [
-        "architecture",
-        "design",
-        "security",
-        "api",
-        "system",
-        "scale",
-        "owasp"
-      ],
-      "level": "advanced",
-      "prerequisites": [
-        "core-development",
-        "data-structures"
-      ]
+      "description": "System design, software architecture, API design, cybersecurity, and threat modeling. Build secure, scalable systems.",
+      "triggers": ["architecture", "system design", "security", "api", "scalability", "owasp", "threat modeling", "compliance"],
+      "parameters": {
+        "system_type": { "type": "string", "required": true },
+        "scale": { "type": "string", "enum": ["startup", "growth", "enterprise"], "required": false }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "advanced"
     },
     {
       "id": "emerging-tech",
       "name": "Emerging Technologies",
       "path": "skills/emerging-tech/SKILL.md",
-      "description": "Prompt engineering, AI agents, AI red teaming, and leadership roles. Navigate emerging tech and enable career transitions.",
-      "triggers": [
-        "prompt",
-        "ai-agents",
-        "leadership",
-        "pm",
-        "manager",
-        "emerging",
-        "llm"
-      ],
-      "level": "advanced",
-      "prerequisites": [
-        "industry-experience"
-      ]
+      "description": "Emerging technologies (prompt engineering, AI agents, red teaming) and leadership roles (product manager, engineering manager, DevRel).",
+      "triggers": ["prompt engineering", "ai-agents", "leadership", "pm", "product manager", "engineering manager", "devrel", "llm", "red teaming"],
+      "parameters": {
+        "focus": { "type": "string", "enum": ["emerging-tech", "leadership"], "required": true }
+      },
+      "retry": { "max_attempts": 3, "backoff": "exponential" },
+      "level": "advanced"
     }
   ],
-  "hooks": {
-    "path": "hooks/hooks.json",
-    "enabled": true,
-    "autoLoad": true,
-    "count": 12
-  },
   "documentation": {
     "readme": "README.md",
-    "architecture": "docs/ARCHITECTURE.md",
-    "workflow": "docs/WORKFLOW.md",
-    "bestPractices": "docs/BEST-PRACTICES.md",
-    "contributing": "docs/CONTRIBUTING.md",
-    "changelog": "CHANGELOG.md",
-    "api": "docs/API.md"
+    "changelog": "CHANGELOG.md"
   },
   "statistics": {
     "careerPaths": 65,
@@ -496,92 +391,76 @@
     "totalContentHours": 2800,
     "projectIdeas": 100,
     "codeExamples": 500,
-    "communityUsers": 2000000,
-    "githubStars": 224000
+    "version": "2.0.0"
   },
   "features": {
     "core": [
-      "65+ career roadmaps from developer-roadmap.sh",
-      "7 specialized AI agents for expert guidance",
-      "Personalized learning paths based on goals and experience",
-      "Comprehensive skill assessment and progress tracking",
+      "65+ career roadmaps (2024-2025 updated)",
+      "7 specialized AI agents with type-safe I/O schemas",
+      "Personalized learning paths with troubleshooting guides",
+      "Comprehensive skill assessment with progress tracking",
       "Portfolio project recommendations by skill level",
-      "Technology stack guidance and comparison tools"
+      "Error handling with fallback strategies"
     ],
-    "advanced": [
-      "Industry best practices and design patterns",
-      "Real-world examples and code snippets",
-      "Interactive learning commands with detailed workflows",
-      "Progress analytics and milestone tracking",
-      "Intelligent agent-skill-command alignment",
-      "Production-ready implementations"
+    "production": [
+      "SASMP v1.3.0 compliant",
+      "Anthropic 2025 agentic design patterns",
+      "Retry logic with exponential backoff",
+      "Comprehensive troubleshooting decision trees",
+      "Zero broken links guaranteed",
+      "Token/cost optimization configs"
     ]
   },
   "quality": {
     "codeReview": true,
     "testCoverage": true,
     "documentation": "comprehensive",
-    "alignment": "100%",
-    "gaps": "zero"
+    "integrity": {
+      "broken_links": 0,
+      "orphan_skills": 0,
+      "ghost_triggers": 0,
+      "circular_dependencies": 0
+    },
+    "standards": {
+      "sasmp": "1.3.0",
+      "eqhm": true,
+      "production_grade": true
+    }
   },
-  "supportedLanguages": [
-    "en"
-  ],
+  "supportedLanguages": ["en"],
   "categories": [
     "Learning",
     "Career Development",
     "Technical Education",
-    "Professional Growth",
-    "Skill Assessment",
-    "AI-Powered Mentoring"
-  ],
-  "targetAudience": [
-    "Career switchers",
-    "Junior developers",
-    "Self-taught programmers",
-    "University graduates",
-    "Career explorers",
-    "Senior developers exploring new domains",
-    "Technical managers",
-    "Career advisors"
+    "AI-Powered Mentoring",
+    "Production-Grade Tools"
   ],
   "metadata": {
     "quality": "production",
     "maintenance": "active",
     "updateFrequency": "monthly",
-    "communityDriven": true,
-    "openSource": true,
+    "sasmp_compliant": true,
+    "eqhm_enabled": true,
     "type": "learning-system",
     "tier": "enterprise"
   },
-  "integrations": {
-    "externalServices": [],
-    "tools": [
-      "Claude AI",
-      "Developer Roadmap Community"
-    ],
-    "apis": [],
-    "mcp": false
-  },
   "versioning": {
-    "current": "1.0.0",
-    "lastUpdated": "2024-11-18",
-    "roadmap": {
-      "v1.1": "Interactive skill assessments with detailed metrics",
-      "v1.2": "Community project showcase and peer learning",
-      "v2.0": "Mobile app and advanced analytics dashboard"
-    }
-  },
-  "performance": {
-    "lazyLoad": true,
-    "caching": true,
-    "optimization": "production",
-    "responseTime": "<100ms"
-  },
-  "security": {
-    "requiresAuth": false,
-    "dataPrivacy": "no-tracking",
-    "compliance": "GDPR-compliant",
-    "encryption": "default"
+    "current": "2.0.0",
+    "previous": "1.0.0",
+    "lastUpdated": "2025-01-30",
+    "changelog": [
+      {
+        "version": "2.0.0",
+        "date": "2025-01-30",
+        "changes": [
+          "Production-grade upgrade with type-safe I/O schemas",
+          "Added error handling and fallback strategies",
+          "Comprehensive troubleshooting sections for all agents/skills",
+          "2024-2025 industry best practices integration",
+          "Anthropic agentic design patterns implemented",
+          "SASMP v1.3.0 compliance"
+        ]
+      }
+    ]
   }
 }

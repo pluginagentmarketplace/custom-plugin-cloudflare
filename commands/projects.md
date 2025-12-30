@@ -1,172 +1,279 @@
 ---
+# ═══════════════════════════════════════════════════════════════════════════
+# COMMAND: projects
+# Version: 2.0.0 | Updated: 2025-01
+# ═══════════════════════════════════════════════════════════════════════════
 name: projects
-description: Discover Project Ideas
-allowed-tools: Read
+description: Discover portfolio projects appropriate for your skill level and career path
+allowed-tools: Read, Grep, Glob
+
+# ARGUMENTS
+argument-hint: "[level|category] - Optional: beginner/intermediate/advanced or category"
+
+# VALIDATION
+validation:
+  filter:
+    type: string
+    pattern: "^[a-zA-Z\\-\\s]+$"
+    required: false
+    max_length: 30
+    enum: [beginner, intermediate, advanced, frontend, backend, fullstack, mobile, games, data, ml, ai, devops]
+
+# EXIT CODES
+exit_codes:
+  0: Success - Projects displayed
+  1: Error - Invalid filter
+  2: Warning - Filter not found, showing all
 ---
 
 # /projects - Discover Project Ideas
 
-Find portfolio projects appropriate for your learning level and career path.
+## Quick Start
 
-## Usage
-
-```
+```bash
 /projects                  # Show all projects
-/projects [level]         # Projects for your level
-/projects [category]      # Projects for your path
+/projects beginner         # Beginner-level projects
+/projects intermediate     # Intermediate projects
+/projects frontend         # Frontend projects
+/projects ml               # Machine learning projects
 ```
 
-## Project Levels
+## Projects by Level
 
 ### Beginner (0-3 months)
-**Goal:** Learn fundamentals, build first project
+**Goal:** Learn fundamentals, complete first projects
 
-- Todo App
-- Calculator App
-- Weather App (API integration)
-- Quiz App
-- Personal Portfolio
-
----
+| Project | Skills | Time |
+|---------|--------|------|
+| **Todo App** | CRUD, State | 1-2 wk |
+| **Calculator** | JavaScript logic | 1 wk |
+| **Weather App** | API integration | 1-2 wk |
+| **Quiz App** | DOM manipulation | 1-2 wk |
+| **Portfolio Site** | HTML/CSS | 1-2 wk |
 
 ### Intermediate (3-12 months)
-**Goal:** Build complete applications, solve real problems
+**Goal:** Build complete applications
 
-**Frontend:**
-- E-commerce product page
-- Social media feed
-- Chat application
-- Project management tool
-- Dashboard with charts
-
-**Backend:**
-- REST API (CRUD operations)
-- Blog CMS (authentication, database)
-- Task manager backend
-- E-commerce API
-- Real-time collaboration app
-
-**Full Stack:**
-- Blog platform
-- Note-taking app
-- Budget tracker
-- Photo gallery
-- Social platform (MVP)
-
-**DevOps:**
-- Containerize existing app
-- CI/CD pipeline setup
-- Kubernetes deployment
-- Infrastructure as Code
-
-**Mobile:**
-- Todo list app
-- Photo album
-- News reader
-- Expense tracker
-
----
+| Project | Skills | Time |
+|---------|--------|------|
+| **E-commerce UI** | Components, State | 2-4 wk |
+| **Real-time Chat** | WebSockets, Auth | 3-4 wk |
+| **Blog Platform** | Full Stack, CMS | 4-6 wk |
+| **Dashboard** | Data viz, APIs | 2-3 wk |
+| **Task Manager** | CRUD, Database | 2-3 wk |
 
 ### Advanced (1+ years)
-**Goal:** Production-ready applications, complex systems
+**Goal:** Production-ready systems
 
-- Multi-tenant SaaS application
-- Real-time multiplayer game
-- Microservices architecture
-- Machine learning pipeline
-- Distributed system
-- High-performance platform
+| Project | Skills | Time |
+|---------|--------|------|
+| **SaaS Platform** | Multi-tenant, Payments | 3-6 mo |
+| **Microservices** | Distributed systems | 2-4 mo |
+| **ML Pipeline** | MLOps, Production | 2-3 mo |
+| **Multiplayer Game** | Networking, Real-time | 3-6 mo |
+| **AI Agent System** | LLM, Tool calling | 1-2 mo |
 
----
+## Projects by Category
 
-## By Category
+### Frontend
+```
+Beginner:
+├─ Todo App (HTML/CSS/JS)
+├─ Portfolio Website
+└─ Calculator
 
-### Frontend Projects
-1. **Todo App** (HTML/CSS/JS)
-2. **Weather App** (API integration)
-3. **E-commerce UI** (React components)
-4. **Real-time Chat** (WebSockets)
-5. **Dashboard** (Data visualization)
+Intermediate:
+├─ E-commerce Product Page (React)
+├─ Social Media Feed
+├─ Admin Dashboard
+└─ Real-time Chat UI
 
-### Backend Projects
-1. **REST API** (User CRUD)
-2. **Blog CMS** (Database design)
-3. **E-commerce Backend** (Complex)
-4. **Real-time Server** (WebSockets)
-5. **Microservices** (Advanced)
+Advanced:
+├─ Design System Library
+├─ Micro-frontend Architecture
+└─ Performance-optimized SPA
+```
 
-### Full Stack Projects
-1. **Blog Platform**
-2. **Project Management Tool**
-3. **E-commerce Store**
-4. **Booking System**
-5. **SaaS Application**
+### Backend
+```
+Beginner:
+├─ REST API (User CRUD)
+├─ Simple Blog API
+└─ URL Shortener
 
-### Mobile Projects
-1. **Todo App**
-2. **Weather App**
-3. **Social App**
-4. **Photo Album**
-5. **Real-time Chat**
+Intermediate:
+├─ E-commerce Backend
+├─ Authentication System
+├─ Real-time Notifications
+└─ File Upload Service
 
-### Game Projects
-1. **2D Platformer** (Unity)
-2. **3D Game** (Unreal/Unity)
-3. **Multiplayer Game** (Networking)
-4. **Mobile Game** (Cross-platform)
+Advanced:
+├─ GraphQL Federation
+├─ Event-driven Architecture
+└─ High-throughput API
+```
 
-### Data/ML Projects
-1. **Data Analysis** (Pandas, Jupyter)
-2. **ML Model** (scikit-learn)
-3. **Deep Learning** (TensorFlow)
-4. **Data Pipeline** (Airflow)
-5. **ML Pipeline** (MLOps)
+### Full Stack
+```
+Beginner:
+├─ Blog Platform
+├─ Note-taking App
+└─ Budget Tracker
 
----
+Intermediate:
+├─ Project Management Tool
+├─ E-commerce Store
+├─ Booking System
+└─ Social Platform MVP
+
+Advanced:
+├─ Multi-tenant SaaS
+├─ Real-time Collaboration
+└─ Marketplace Platform
+```
+
+### Mobile
+```
+Beginner:
+├─ Todo List App
+├─ Weather App
+└─ Calculator
+
+Intermediate:
+├─ Photo Gallery
+├─ News Reader
+├─ Expense Tracker
+└─ Chat App
+
+Advanced:
+├─ Social Media App
+├─ E-commerce App
+└─ Fitness Tracking App
+```
+
+### Games
+```
+Beginner:
+├─ Tic-Tac-Toe
+├─ Pong Clone
+└─ Snake Game
+
+Intermediate:
+├─ 2D Platformer
+├─ Tower Defense
+├─ Puzzle Game
+└─ Endless Runner
+
+Advanced:
+├─ 3D Adventure Game
+├─ Multiplayer Battle Arena
+└─ Open World RPG
+```
+
+### Data/ML
+```
+Beginner:
+├─ Data Analysis (Pandas)
+├─ Visualization Dashboard
+└─ CSV Processor
+
+Intermediate:
+├─ Classification Model
+├─ Recommendation System
+├─ Sentiment Analysis
+└─ Time Series Forecast
+
+Advanced:
+├─ RAG Chatbot
+├─ AI Agent with Tools
+├─ ML Pipeline (MLflow)
+└─ Multi-Agent System
+```
+
+### DevOps
+```
+Beginner:
+├─ Containerize an App
+├─ CI Pipeline Setup
+└─ Basic Monitoring
+
+Intermediate:
+├─ Kubernetes Deployment
+├─ IaC with Terraform
+├─ Multi-stage CI/CD
+└─ Log Aggregation
+
+Advanced:
+├─ Service Mesh
+├─ Multi-cloud Setup
+└─ GitOps Implementation
+```
 
 ## Project Selection Guide
 
 ```
-Choose by:
-├─ Your learning level
-├─ Time available (weeks vs months)
-├─ Skills to practice
-├─ Interest area
-└─ Career goal alignment
+How to choose?
+│
+├─► What's your current level?
+│   ├─ New to programming → Beginner projects
+│   ├─ Can build basic apps → Intermediate projects
+│   └─ Building production systems → Advanced projects
+│
+├─► What's your goal?
+│   ├─ Get first job → 3-5 intermediate projects
+│   ├─ Level up skills → Mix of intermediate + advanced
+│   └─ Career change → Focus on target role projects
+│
+└─► How much time?
+    ├─ 1-2 weeks → Single feature projects
+    ├─ 1-2 months → Complete applications
+    └─ 3+ months → Full systems
 ```
 
----
+## Project Checklist
 
-## Project Benefits
+For every project:
+- [ ] Define clear requirements
+- [ ] Build MVP first
+- [ ] Add testing
+- [ ] Deploy live
+- [ ] Write README
+- [ ] Push to GitHub
+- [ ] Share on LinkedIn
 
-✓ Real-world problem solving
-✓ Portfolio building
-✓ Practical skill application
-✓ Interview preparation
-✓ Confidence building
+## Related Commands
 
----
+| Command | Description |
+|---------|-------------|
+| `/learn` | Get guidance while building |
+| `/assess` | Verify skills after completion |
+| `/browse` | Find related learning paths |
 
-## How to Use
+## Troubleshooting
 
-1. **Find projects** for your level/path
-2. **Choose one** that interests you
-3. **Build it** following the learning
-4. **Deploy it** to showcase
-5. **Share it** on GitHub
-6. **Move to next** level
+```
+Don't know which project?
+├─► Start with classic: Todo App
+├─► Match to job descriptions in your target role
+└─► Ask: "Would I use this?" If yes, build it
 
----
+Project too hard?
+├─► Break into smaller pieces
+├─► Build simpler version first
+├─► Use `/learn` for help with specific parts
+└─► It's okay to struggle - that's learning
 
-## Tips
+Project too easy?
+├─► Add more features
+├─► Add testing (unit, integration)
+├─► Add authentication, authorization
+└─► Move to next level
+```
 
-- **Start small:** Beginner projects first
-- **Build complete:** Finish what you start
-- **Deploy:** Make it live (GitHub, Vercel, etc.)
-- **Document:** README and comments
-- **Share:** GitHub for portfolio
-- **Iterate:** Add features over time
+## Tips for Success
 
----
-
-**Next:** Use `/projects` to find your next challenge, then `/learn` for support.
+1. **Finish what you start** - Incomplete projects don't count
+2. **Deploy everything** - Live demos impress employers
+3. **Document well** - README, comments, screenshots
+4. **Build in public** - Share progress on Twitter/LinkedIn
+5. **Iterate** - V1 → V2 → V3 shows growth

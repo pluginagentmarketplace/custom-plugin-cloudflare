@@ -1,115 +1,283 @@
 ---
+# ═══════════════════════════════════════════════════════════════════════════
+# SKILL: Data Engineering
+# Version: 2.0.0 | Updated: 2025-01
+# ═══════════════════════════════════════════════════════════════════════════
 name: data-engineering
-description: Data engineering, machine learning, AI, and MLOps. From data pipelines to production ML systems. ML algorithms, deep learning, and AI.
+description: Data engineering, machine learning, AI, and MLOps. From data pipelines to production ML systems and LLM applications.
+
+# ACTIVATION TRIGGERS
+triggers:
+  - data engineering
+  - machine learning
+  - ml
+  - ai
+  - mlops
+  - spark
+  - airflow
+  - llm
+  - rag
+  - langchain
+
+# SKILL PARAMETERS
+parameters:
+  role:
+    type: string
+    enum: [data-engineer, ml-engineer, ai-engineer]
+    required: true
+  experience:
+    type: string
+    enum: [beginner, intermediate, advanced]
+    required: false
+    default: beginner
+
+# OUTPUT SPECIFICATION
+outputs:
+  learning_path:
+    type: array
+  tech_stack:
+    type: object
+  projects:
+    type: array
+
+# RELIABILITY
+retry:
+  max_attempts: 3
+  backoff: exponential
+
+# OBSERVABILITY
+observability:
+  log_level: info
+  metrics: [path_completion_rate]
+
+level: advanced
+prerequisites:
+  - programming-basics
+  - python-advanced
 ---
 
-# Data & AI Engineering
+# Data Engineering Skill
 
-## Career Paths
+## Quick Reference
 
-| Role | Focus | Timeline | Stack |
-|------|-------|----------|-------|
-| **Data Engineer** | Pipelines, Infra | 1-2 yr | Spark, Airflow, Python |
-| **ML Engineer** | Models, Features | 1-2 yr | Python, TensorFlow |
-| **AI Engineer** | LLMs, Agents | 6-12 mo | Python, LangChain |
-
----
-
-## Data Engineer Path
-
-```
-SQL → Python → ETL/Pipelines → Big Data (Spark) → Data Warehouse → Orchestration (Airflow)
-```
-
-**Skills:** SQL mastery, Data pipelines, ETL/ELT, Performance tuning
-
-**Stack:** Python/Scala + Spark + Airflow + PostgreSQL/Snowflake
-
-**Timeline:** 1-2 years
-
----
-
-## Machine Learning Path
-
-```
-Python → Math (Linear Algebra, Calculus) → ML Algorithms → Deep Learning → Production
-```
-
-**Algorithms:**
-- Supervised: Regression, Classification, Boosting
-- Unsupervised: Clustering, Dimensionality Reduction
-- Deep: Neural Networks, CNNs, RNNs, Transformers
-
-**Stack:** Python + TensorFlow/PyTorch + scikit-learn + MLflow
-
-**Timeline:** 1-2 years
-
----
-
-## AI Engineer Path (Emerging)
-
-```
-LLM Fundamentals → Prompt Engineering → LangChain → AI Agents → Production
-```
-
-**Skills:** Prompt engineering, AI agents, RAG, Evaluation, Deployment
-
-**Stack:** Python + LangChain + OpenAI/Anthropic APIs
-
-**Timeline:** 6-12 months
-
----
-
-## ML Workflow
-
-```
-Problem Definition → Data Collection → Preprocessing → EDA → Feature Engineering
-                ↓
-    Model Selection → Training → Hyperparameter Tuning → Evaluation
-                ↓
-        Validation → Deployment → Monitoring → Retraining
-```
+| Role | Focus | Timeline | Entry From |
+|------|-------|----------|------------|
+| **Data Engineer** | Pipelines, Infra | 12-24 mo | Backend Dev |
+| **ML Engineer** | Models, Features | 12-24 mo | Data Scientist |
+| **AI Engineer** | LLMs, Agents | 6-12 mo | Any Developer |
 
 ---
 
-## Popular Tools
+## Learning Paths
 
-**Data Processing:** Pandas, NumPy, Spark, dbt
-**ML Algorithms:** scikit-learn, XGBoost, LightGBM
-**Deep Learning:** TensorFlow, PyTorch, JAX
-**MLOps:** MLflow, Kubeflow, Weights & Biases
-**Cloud:** AWS SageMaker, GCP Vertex AI, Azure ML
-**Pipelines:** Apache Airflow, Prefect, Dagster
+### Data Engineer
+```
+[1] SQL Mastery (4-6 wk)
+ │  └─ Window functions, CTEs, optimization
+ │
+ ▼
+[2] Python for Data (4-6 wk)
+ │  └─ Pandas, file formats, scripting
+ │
+ ▼
+[3] ETL/ELT Pipelines (6-8 wk)
+ │  └─ Extract, transform, load patterns
+ │
+ ▼
+[4] Big Data: Spark (8-12 wk)
+ │  └─ PySpark, DataFrames, partitioning
+ │
+ ▼
+[5] Data Warehouse (4-6 wk)
+ │  └─ Star schema, dbt, Snowflake/BQ
+ │
+ ▼
+[6] Orchestration (4-6 wk)
+    └─ Airflow/Prefect, scheduling, monitoring
+```
+
+**2025 Stack:** Python + Spark + Airflow + dbt + Snowflake/BigQuery
 
 ---
 
-## Learning Progression
+### ML Engineer
+```
+[1] Python + NumPy (4-6 wk)
+ │
+ ▼
+[2] Math Foundations (6-8 wk)
+ │  └─ Linear algebra, calculus, statistics
+ │
+ ▼
+[3] Classical ML (8-12 wk)
+ │  └─ scikit-learn, XGBoost, evaluation
+ │
+ ▼
+[4] Deep Learning (8-12 wk)
+ │  └─ PyTorch, CNNs, Transformers
+ │
+ ▼
+[5] MLOps (6-8 wk)
+    └─ MLflow, model serving, monitoring
+```
 
-**Month 1-3:** Python + SQL + Statistics
-**Month 3-6:** ML fundamentals + Algorithms
-**Month 6-9:** Deep learning + Specialization
-**Month 9-12:** MLOps + Production systems
+**2025 Stack:** Python + PyTorch + scikit-learn + MLflow + W&B
 
 ---
 
-## Key Algorithms
+### AI Engineer (2025 Hot Path)
+```
+[1] LLM Fundamentals (2-3 wk)
+ │  └─ Tokens, embeddings, context windows
+ │
+ ▼
+[2] Prompt Engineering (2-3 wk)
+ │  └─ Few-shot, CoT, structured output
+ │
+ ▼
+[3] RAG Systems (3-4 wk)
+ │  └─ Embeddings, vector DBs, retrieval
+ │
+ ▼
+[4] AI Agents (4-6 wk)
+ │  └─ Tool calling, agent loops, memory
+ │
+ ▼
+[5] Production Deploy (ongoing)
+    └─ Evaluation, guardrails, monitoring
+```
 
-**Classical ML:** Linear Regression, SVM, Decision Trees, Random Forest, Gradient Boosting
+**2025 Stack:** Python + LangChain/LlamaIndex + OpenAI/Anthropic + ChromaDB
 
-**Deep Learning:** CNNs, RNNs, LSTMs, Transformers
+---
 
-**Generative AI:** LLMs, Diffusion Models, VAEs
+## 2025 Tool Matrix
+
+### Data Processing
+| Tool | Scale | Use Case |
+|------|-------|----------|
+| **Pandas** | <10GB | Prototyping, small data |
+| **Polars** | <100GB | Fast local processing |
+| **Spark** | >100GB | Distributed processing |
+| **dbt** | Any | Transformations, testing |
+
+### ML Frameworks
+| Framework | Best For | Complexity |
+|-----------|----------|------------|
+| **scikit-learn** | Classical ML | Low |
+| **XGBoost** | Tabular data | Low |
+| **PyTorch** | Research, flexibility | Medium |
+| **TensorFlow** | Production, mobile | Medium |
+
+### LLM/AI Tools
+| Tool | Use Case |
+|------|----------|
+| **LangChain** | LLM orchestration |
+| **LlamaIndex** | RAG systems |
+| **Claude/OpenAI** | LLM APIs |
+| **ChromaDB** | Vector storage |
+
+---
+
+## Algorithm Reference
+
+### Classical ML
+| Type | Algorithms |
+|------|------------|
+| Regression | Linear, Ridge, Lasso, ElasticNet |
+| Classification | Logistic, SVM, Decision Tree |
+| Ensemble | Random Forest, XGBoost, LightGBM |
+| Clustering | K-Means, DBSCAN, Hierarchical |
+
+### Deep Learning
+| Architecture | Use Case |
+|--------------|----------|
+| **CNN** | Images, vision |
+| **RNN/LSTM** | Sequences |
+| **Transformer** | NLP, LLMs |
+| **Diffusion** | Image generation |
+
+---
+
+## AI Agent Architecture (2025)
+
+```
+┌─────────────────────────────────────────┐
+│            AGENTIC LOOP                  │
+├─────────────────────────────────────────┤
+│  PERCEIVE → REASON → ACT → REFLECT      │
+│      │         │       │       │        │
+│      │         │       │       └─► Loop │
+│      │         │       └─► Execute tools│
+│      │         └─► LLM decides action   │
+│      └─► Gather context, observations   │
+└─────────────────────────────────────────┘
+
+Design Patterns (Anthropic 2025):
+• Prompt Chaining - Sequential fixed steps
+• Routing - Classify and dispatch
+• Parallelization - Concurrent subtasks
+• Orchestrator-Workers - Central delegation
+• Evaluator-Optimizer - Generate + critique
+```
+
+---
+
+## Troubleshooting
+
+```
+Which path to choose?
+├─► Love building infrastructure? → Data Engineer
+├─► Love algorithms/math? → ML Engineer
+├─► Want fastest AI entry? → AI Engineer
+└─► Uncertain? → Start with Python + SQL
+
+Model not performing well?
+├─► Data quality issues? → Clean data first
+├─► Feature engineering? → Create better features
+├─► Wrong algorithm? → Try different models
+├─► Overfitting? → More data, regularization
+└─► Hyperparameters? → Grid/random search
+
+LLM giving bad answers?
+├─► Prompt too vague? → Be more specific
+├─► Missing context? → Add relevant info
+├─► Hallucinating? → Use RAG, verify facts
+└─► Wrong tool? → Improve tool descriptions
+```
+
+---
+
+## Common Failure Modes
+
+| Symptom | Root Cause | Recovery |
+|---------|------------|----------|
+| Model fails in prod | Data drift | Monitor distributions |
+| Pipeline always late | Unoptimized queries | Profile, partition |
+| RAG finds wrong docs | Bad chunking | Tune chunk size, overlap |
+| Agent loops forever | No exit condition | Add max iterations |
 
 ---
 
 ## Portfolio Projects
 
-1. Data analysis with Pandas
-2. ML model (classification/regression)
-3. Deep learning model
-4. End-to-end ML pipeline
-5. LLM-based application
+### Data Engineering
+1. ETL Pipeline (Airflow + dbt)
+2. Real-time Streaming (Kafka + Spark)
+3. Data Warehouse Design
+
+### ML Engineering
+1. Classification Model (scikit-learn)
+2. Deep Learning Model (PyTorch)
+3. ML Pipeline (MLflow)
+
+### AI Engineering
+1. RAG Chatbot (LangChain + ChromaDB)
+2. AI Agent with Tools
+3. Multi-Agent System
 
 ---
 
-**Use `/learn` for personalized data/ML/AI guidance.**
+## Next Actions
+
+Specify your target role for a detailed learning plan.
