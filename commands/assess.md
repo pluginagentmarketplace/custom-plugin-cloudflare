@@ -1,110 +1,181 @@
 ---
+# ═══════════════════════════════════════════════════════════════════════════
+# COMMAND: assess
+# Version: 2.0.0 | Updated: 2025-01
+# ═══════════════════════════════════════════════════════════════════════════
 name: assess
-description: Evaluate Skills & Track Progress
-allowed-tools: Read
+description: Evaluate skills, identify gaps, and track learning progress
+allowed-tools: Read, Grep, Glob, Task
+
+# ARGUMENTS
+argument-hint: "[topic|progress] - Optional: specific skill or 'progress'"
+
+# VALIDATION
+validation:
+  topic:
+    type: string
+    pattern: "^[a-zA-Z\\-\\s]+$"
+    required: false
+    max_length: 50
+
+# EXIT CODES
+exit_codes:
+  0: Success - Assessment completed
+  1: Error - Invalid topic
+  2: Warning - Partial assessment (some areas skipped)
 ---
 
 # /assess - Evaluate Skills & Track Progress
 
-Assess your current skills, identify gaps, and track learning progress.
+## Quick Start
 
-## Usage
+```bash
+/assess                   # Full skill assessment
+/assess javascript        # Assess JavaScript specifically
+/assess react             # Assess React knowledge
+/assess progress          # View learning progress
+```
+
+## Assessment Modes
+
+| Mode | Command | Description |
+|------|---------|-------------|
+| **Full** | `/assess` | Complete skill evaluation |
+| **Topic** | `/assess [topic]` | Single skill deep-dive |
+| **Progress** | `/assess progress` | Track learning over time |
+
+## How It Works
 
 ```
-/assess                    # Full skill assessment
-/assess [topic]           # Assess specific skill
-/assess progress          # View your progress
+┌─────────────────────────────────────────────────────────────────┐
+│                    /assess WORKFLOW                              │
+├─────────────────────────────────────────────────────────────────┤
+│  1. SKILL MAPPING                                                │
+│     └─ Identify all skills for your path                        │
+│                                                                  │
+│  2. EVALUATION                                                   │
+│     ├─ Self-assessment questions                                │
+│     ├─ Problem-solving challenges                               │
+│     └─ Concept verification                                     │
+│                                                                  │
+│  3. SCORING                                                      │
+│     ├─ Overall score (0-100)                                    │
+│     ├─ Category breakdown                                       │
+│     └─ Weakness identification                                  │
+│                                                                  │
+│  4. RECOMMENDATIONS                                              │
+│     ├─ Priority learning areas                                  │
+│     ├─ Resources for improvement                                │
+│     └─ Timeline estimates                                       │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-## Assessment Types
+## Skill Levels
 
-### Foundational Skills
-- Data structures & algorithms
-- Programming fundamentals
-- Version control (Git)
-- Problem-solving
+| Level | Score | Description |
+|-------|-------|-------------|
+| **Novice** | 0-25 | Just starting, need guidance |
+| **Beginner** | 25-50 | Basic understanding |
+| **Intermediate** | 50-75 | Can build projects |
+| **Advanced** | 75-90 | Deep expertise |
+| **Expert** | 90-100 | Industry-leading |
 
-### Role-Based Assessment
-- Frontend: HTML/CSS, JavaScript, Frameworks, Testing
-- Backend: Language, Framework, Database, APIs
-- DevOps: Linux, Docker, Kubernetes, Cloud
-- Data: SQL, Python, ML, Statistics
-- Mobile: Platform-specific skills
-- Games: Game architecture, graphics, physics
-
-### Skill Levels
-
-**Novice (0-25%):** Just starting, need guidance
-**Beginner (25-50%):** Basic understanding, tutorials helpful
-**Intermediate (50-75%):** Can build projects, solve problems
-**Advanced (75-90%):** Deep expertise, can mentor
-**Expert (90-100%):** Industry-leading knowledge
-
----
-
-## What You Get
-
-1. **Current Score** - Overall skill level (0-100)
-2. **Category Breakdown** - Strength in each area
-3. **Weaknesses** - Areas to focus on
-4. **Recommendations** - What to learn next
-5. **Timeline** - Estimated time to mastery
-6. **Resources** - Specific learning materials
-
----
-
-## Example Assessment Output
+## Example Output
 
 ```
-JavaScript: 65/100
-├─ ES6+ Syntax: 75/100 ✓
-├─ Promises/Async: 45/100 ✗ (Weak)
-├─ DOM: 70/100 ✓
-└─ Events: 65/100 ◐
+JavaScript Assessment: 65/100 (Intermediate)
+├─ ES6+ Syntax:      75/100 ✓ Strong
+├─ Promises/Async:   45/100 ✗ Weak
+├─ DOM Manipulation: 70/100 ✓ Good
+└─ Event Handling:   65/100 ◐ Moderate
 
-React: 60/100
-├─ Components: 75/100 ✓
-├─ Hooks: 50/100 ✗ (Weak)
-├─ State Mgmt: 45/100 ✗ (Weak)
-└─ Performance: 55/100 ◐
+React Assessment: 60/100 (Intermediate)
+├─ Components:       75/100 ✓ Strong
+├─ Hooks:            50/100 ✗ Weak
+├─ State Management: 45/100 ✗ Weak
+└─ Performance:      55/100 ◐ Moderate
 
-Action Items:
+Priority Actions:
 1. Deep-dive Promises and async/await
-2. Master React hooks
-3. Learn Redux or Zustand
-4. Build 3 medium projects
+2. Master React hooks (useState, useEffect, useContext)
+3. Learn Zustand or TanStack Query for state
+4. Build 3 medium-complexity projects
+
+Estimated Time to Advanced: 8-12 weeks
 ```
 
----
+## Assessment Categories
+
+### By Role
+| Role | Skills Assessed |
+|------|-----------------|
+| **Frontend** | HTML/CSS, JavaScript, Framework, Testing |
+| **Backend** | Language, Framework, Database, APIs |
+| **DevOps** | Linux, Docker, Kubernetes, Cloud |
+| **Data/ML** | SQL, Python, Statistics, ML algorithms |
+| **Mobile** | Platform (iOS/Android), Framework, State |
+
+### By Topic
+| Topic | Sub-Skills |
+|-------|------------|
+| **JavaScript** | ES6+, Async, DOM, Events, Modules |
+| **React** | Components, Hooks, State, Performance |
+| **Python** | Syntax, Libraries, OOP, Testing |
+| **Docker** | Images, Containers, Compose, Networks |
 
 ## Progress Tracking
 
-- **Streak:** Consecutive days learning
-- **Hours:** Total learning hours
-- **Skills Mastered:** Completed skills
-- **Projects:** Completed projects
-- **Milestone:** Current level achieved
+```
+Learning Progress:
+├─ Current Streak:    14 days 🔥
+├─ Total Hours:       127 hours
+├─ Skills Mastered:   12/24
+├─ Projects Completed: 5
+└─ Current Milestone: Intermediate Frontend
 
----
+History:
+├─ Week 1: JavaScript 45 → 55 (+10)
+├─ Week 2: React 40 → 52 (+12)
+├─ Week 3: React 52 → 60 (+8)
+└─ Week 4: JavaScript 55 → 65 (+10)
+```
 
-## How to Use
+## Input Validation
 
-1. **Assess** - Take assessment for your role
-2. **Identify** - Find weak areas
-3. **Learn** - Use `/learn` for those areas
-4. **Track** - Monitor progress over time
-5. **Reassess** - Every 4 weeks to see improvement
+| Input | Valid | Invalid |
+|-------|-------|---------|
+| `/assess` | ✓ | - |
+| `/assess javascript` | ✓ | - |
+| `/assess progress` | ✓ | - |
+| `/assess 123` | - | ✗ Numbers only |
 
----
+## Best Practices
 
-## Tips
+1. **Be honest** - Self-assess accurately
+2. **Actually solve** - Don't guess answers
+3. **Reassess regularly** - Every 4 weeks
+4. **Focus on weaknesses** - Priority improvement
+5. **Build projects** - Reinforce learning
 
-- Be honest in assessments
-- Actually solve problems (don't guess)
-- Reassess every 4 weeks
-- Focus on weaknesses first
-- Build projects to reinforce learning
+## Related Commands
 
----
+| Command | Use After |
+|---------|-----------|
+| `/learn` | Get guidance on weak areas |
+| `/projects` | Find projects to practice |
+| `/browse` | Explore learning paths |
 
-**Next:** Use `/assess` to find your starting point, then `/learn` for personalized guidance.
+## Troubleshooting
+
+```
+Score seems wrong?
+├─► Be more honest in self-assessment
+├─► Actually try the challenges
+└─► Score reflects current ability, not potential
+
+Not improving?
+├─► Are you actively practicing? (not just reading)
+├─► Focus on weakest areas first
+├─► Build projects, not just tutorials
+└─► Reassess in 2-4 weeks, not days
+```
