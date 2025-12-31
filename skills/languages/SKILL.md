@@ -51,6 +51,10 @@ observability:
   metrics: [recommendation_accuracy]
 
 level: intermediate-to-advanced
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Languages & Frameworks Skill

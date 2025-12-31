@@ -49,6 +49,10 @@ observability:
 level: advanced
 prerequisites:
   - industry-experience
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Emerging Technologies Skill

@@ -54,6 +54,10 @@ level: advanced
 prerequisites:
   - core-development
   - data-structures
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # System Design Skill

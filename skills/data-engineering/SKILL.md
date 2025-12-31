@@ -54,6 +54,10 @@ level: advanced
 prerequisites:
   - programming-basics
   - python-advanced
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Data Engineering Skill

@@ -57,6 +57,10 @@ prerequisites:
   - git-basics
 
 level: intermediate
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Core Development Skill

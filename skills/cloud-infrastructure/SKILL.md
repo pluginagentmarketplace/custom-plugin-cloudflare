@@ -52,6 +52,10 @@ level: advanced
 prerequisites:
   - linux-basics
   - networking-basics
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Cloud Infrastructure Skill

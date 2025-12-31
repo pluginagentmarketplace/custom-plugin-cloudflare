@@ -50,6 +50,10 @@ observability:
 level: advanced
 prerequisites:
   - core-development
+
+sasmp_version: "1.3.0"
+bonded_agent: cloudflare-specialist
+bond_type: PRIMARY_BOND
 ---
 
 # Mobile Development Skill
