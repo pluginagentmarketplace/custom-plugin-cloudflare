@@ -59,7 +59,7 @@ prerequisites:
 level: intermediate
 
 sasmp_version: "1.3.0"
-bonded_agent: cloudflare-specialist
+bonded_agent: 01-core-paths
 bond_type: PRIMARY_BOND
 ---
 
