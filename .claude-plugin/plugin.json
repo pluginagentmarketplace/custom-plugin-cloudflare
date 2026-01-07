@@ -3,7 +3,6 @@
   "displayName": "Developer Roadmap Learning System",
   "version": "2.0.0",
   "releaseDate": "2025-01-30",
-  "sasmp_version": "1.3.0",
   "description": "Production-grade learning system with 65+ career roadmaps, 7 specialist AI agents, type-safe I/O contracts, comprehensive troubleshooting, and 2024-2025 industry best practices.",
   "longDescription": "Enterprise-grade professional development platform combining 65+ developer career roadmaps with 7 specialized AI agents. Features include: type-safe input/output schemas, error handling with fallback strategies, retry logic with exponential backoff, comprehensive troubleshooting decision trees, and OWASP-compliant security guidance. Built on Anthropic 2025 agentic patterns (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer). Perfect for career switchers, developers, and teams seeking production-ready learning paths.",
   "author": "Developer Roadmap Community",
